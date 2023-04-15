@@ -7,14 +7,14 @@
 -- two dots ('..' - without quotes).
 
 CREATE TABLE "ca_wildfire" (
-    "incident_name" string   NOT NULL,
-    "county" string   NOT NULL,
-    "location" string   NOT NULL,
+    "incident_name" varchar   NOT NULL,
+    "county" varchar   NOT NULL,
+    "location" varchar   NOT NULL,
     "longitude" float   NOT NULL,
     "latitude" float   NOT NULL,
     "acres_burned" float   NOT NULL,
     "start_date" date   NOT NULL,
-    "extinquished_date" data   NOT NULL,
-    "days_duration" float   NOT NULL
+    "extinquished_date" date   NOT NULL,
+    "days_duration" int   NOT NULL
 );
 
