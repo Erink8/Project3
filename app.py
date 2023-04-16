@@ -1,7 +1,6 @@
 #Set up dependencies
 #################################################################################
 import os
-import numpy as dt
 from flask import Flask, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
