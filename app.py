@@ -26,7 +26,7 @@ session = Session(engine)
 
 app + Flask (__name__)
 
-@app.route('/')
+@app.route('/*')
 def greeting():
     return 'Welcome to California Wildfire Data API'
 
