@@ -19,20 +19,20 @@ engine = create_engine(os.getenv('DATABASE_URI'))
 
 Base.prepare(engine, reflect= True)
 
-california_fire_data = Base.classes.text
+Test = Base.classes.text
 
 session = Session(engine)
 
 app + Flask (__name__)
 
-@app.route('https://california-fire-data.onrender.com/')
+@app.route('/')
 def greeting():
     return 'Welcome to California Wildfire Data API'
 
-@app.route('https://california-fire-data.onrender.com/api')
+@app.route('/api')
 def test():
-    cols = ['incident_name','county', 'location', 'longitude', 'latitude','acres_burned', 'start_date', 'extinquished_date', 'days_duration']
-    data = session.query(california_fire_data).all()
+    cols = ['id','val']
+    data = session.query(Test).all()
     result = [{col: getattr(d, col, _default=None) for col in cols} for d in data]
     return jsonify(result=result)
 
