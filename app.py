@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
+from flask_cors import cross_origin
 #DATABASE_URI = "postgres://california_fire_data_user:NbkbeOnFEw8JiagLONTh7bO66LOj3OKQ@dpg-cgs9g8qut4mcloj9clbg-a.oregon-postgres.render.com/california_fire_data"
 
 #############################################################################
@@ -32,6 +33,7 @@ def greeting():
     return 'Welcome to California Wildfire Data API'
 
 @app.route('/api')
+@cross_origin
 def test():
     cols = ['id','val']
     data = session.query(Test).all()
