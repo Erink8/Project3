@@ -13,18 +13,19 @@ DATABASE_URI = "postgres://california_fire_data_user:NbkbeOnFEw8JiagLONTh7bO66LO
 #API Unique Name:   projectKey
 #API Key: rnd_7h1CIcrEbpcxg6tmAaZKcC58YZ4L
 ############################################################################
-Base = automap_base
+Base = automap_base()
 
 #engine = create_engine(os.gentenv('DATABASE_URI_E'))
-engine = create_engine(os.getenv(DATABASE_URI))
+#engine = create_engine(os.getenv(DATABASE_URI))
+engine = create_engine(DATABASE_URI)
 
 Base.prepare(engine, reflect= True)
 
-Test = Base.classes.text
+#Test = Base.classes.california_fire_data
 
 session = Session(engine)
 
-app + Flask (__name__)
+app = Flask (__name__)
 
 @app.route('/')
 def greeting():
@@ -38,3 +39,4 @@ def test():
     return jsonify(result=result)
 
     ##result = [{col: getattr(d, col) for col in cols} for d in data]
+#print(session)
