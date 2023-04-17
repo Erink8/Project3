@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
+from config.py import api_site 
 
 #############################################################################
 #KEY: DATABASE_URI
@@ -15,7 +16,7 @@ from sqlalchemy.ext.automap import automap_base
 Base = automap_base
 
 #engine = create_engine(os.gentenv(DATABASE_URI_E'))
-engine = create_engine(os.getenv('DATABASE_URI'))
+engine = create_engine(os.getenv('api_site'))
 
 Base.prepare(engine, reflect= True)
 
@@ -33,7 +34,7 @@ def greeting():
 def test():
     cols = ['id','val']
     data = session.query(Test).all()
-    result = [{col: getattr(d, col, _default=None) for col in cols} for d in data]
+    result = [{col: getattr(d, col) for col in cols} for d in data]
     return jsonify(result=result)
 
     ##result = [{col: getattr(d, col) for col in cols} for d in data]
