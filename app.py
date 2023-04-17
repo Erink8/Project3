@@ -5,7 +5,7 @@ from flask import Flask, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
-from config.py import api_site 
+#from config.py import api_site 
 
 #############################################################################
 #KEY: DATABASE_URI
@@ -16,7 +16,7 @@ from config.py import api_site
 Base = automap_base
 
 #engine = create_engine(os.gentenv(DATABASE_URI_E'))
-engine = create_engine(os.getenv('api_site'))
+engine = create_engine(os.getenv(postgres://california_fire_data_user:NbkbeOnFEw8JiagLONTh7bO66LOj3OKQ@dpg-cgs9g8qut4mcloj9clbg-a.oregon-postgres.render.com/california_fire_data'))
 
 Base.prepare(engine, reflect= True)
 
