@@ -33,7 +33,7 @@ def greeting():
     return 'Welcome to California Wildfire Data API'
 
 @app.route('/api')
-@cross_origin
+@cross_origin()
 def test():
     cols = ['id','val']
     data = session.query(Test).all()
