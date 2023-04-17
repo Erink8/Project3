@@ -34,7 +34,7 @@ def greeting():
 def test():
     cols = ['id','val']
     data = session.query(Test).all()
-    result = [{col: getattr(d, col) for col in cols} for d in data]
+    result = [{col: getattr(d, col, _default=None) for col in cols} for d in data]
     return jsonify(result=result)
 
     ##result = [{col: getattr(d, col) for col in cols} for d in data]
