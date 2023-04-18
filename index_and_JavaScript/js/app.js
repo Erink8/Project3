@@ -1,12 +1,26 @@
+// Define the URL of your Flask API
+var apiUrl = "https://california-wildfires-api-r6o6.onrender.com/api";
 
-// Store a URL/ call api
-var URL = "http://127.0.0.1:5000/api"
-
-// Fetch the JSON data and console log it
-d3.json(URL).then(
-  function(data) {
-    console.log(data);
+// Use fetch() to make a GET request to your Flask API
+fetch(apiUrl)
+  .then(response => response.json()) // Convert the response to JSON
+  .then(data => {
+    console.log(data); // Access the data returned by the Flask API
+    // Perform actions with the data, such as updating the DOM or calling other functions
+  })
+  .catch(error => {
+    console.error("Error fetching data from API:", error);
   });
+
+
+// // Store a URL/ call api
+// var URL = "https://california-wildfires-api-r6o6.onrender.com/api"
+
+// // Fetch the JSON data and console log it
+// d3.json(URL).then(
+//   function(data) {
+//     console.log(data);
+//   });
 
 
 // // Create funtion that builds bubble chart
