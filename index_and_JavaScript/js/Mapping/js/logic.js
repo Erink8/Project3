@@ -30,6 +30,6 @@
 //  };
   
 
-d3.json("https://california-fire-data.onrender.com/api").then(function(data){
+d3.json("https://california-wildfires-api-r6o6.onrender.com").then(function(data){
   console.log(data);
 });
