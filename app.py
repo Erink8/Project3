@@ -7,6 +7,8 @@ from sqlalchemy.ext.automap import automap_base
 from flask_cors import cross_origin
 from api_keys import database_key
 
+
+
 # Create engine to postgress sql california wildfire data file
 engine = create_engine(database_key)
 
