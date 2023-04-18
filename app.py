@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from flask_cors import cross_origin
 
-
 # Create engine to postgress sql california wildfire data file
 engine = create_engine("postgresql://climate_change_user:xEZhRWSSGx2TOWeWRDuS65K0D0UXcARD@dpg-cgutndodh87vdorr2910-a.oregon-postgres.render.com/california_climate_change")
 #engine = create_engine(os.getenv(DATABASE_URI))
