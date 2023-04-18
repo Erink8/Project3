@@ -5,11 +5,10 @@ from sqlalchemy import create_engine, func
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from flask_cors import cross_origin
-
+from api_keys import database_key
 
 # Create engine to postgress sql california wildfire data file
-engine = create_engine("postgresql://climate_change_user:xEZhRWSSGx2TOWeWRDuS65K0D0UXcARD@dpg-cgutndodh87vdorr2910-a.oregon-postgres.render.com/california_climate_change")
-#engine = create_engine(os.getenv(DATABASE_URI))
+engine = create_engine(database_key)
 
 # Reflect an existing database into a new model
 Base = automap_base()
@@ -46,10 +45,6 @@ def test():
 
     cols = ['ID','incident_name', 'county', 'location', 'longitude', 'latitude', 'acres_burned', 'start_date', 'days_duration','month_year']
     data = session.query(Ca_wildfire).all()
-   # print(getattr(data[0], 'ID'))
-
-
-
     result = [{col: getattr(d, col) for col in cols} for d in data]
     return jsonify(result=result)
 
