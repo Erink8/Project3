@@ -1,3 +1,10 @@
+d3.json("https://california-fire-data.onrender.com").then(function(data){
+  console.log(data);
+});
+
+
+
+
 function createMap(wildfires) {
 
     // Create the tile layer that will be the background of our map.
@@ -28,16 +35,23 @@ function createMap(wildfires) {
       collapsed: false
     }).addTo(map);
   };
-  
 
-d3.json("https://california-fire-data.onrender.com/api").then(function(data){
-  console.log(data);
-});
 
-//const options = {method: 'GET', mode: 'no-cors', headers: {accept: 'application/json'}};
-  //fetch('https://california-fire-data.onrender.com/', options).then(function(data){
-  //console.log(data);
+
+
+//var darkestRedFlame = L.icon({
+  //iconUrl: 'darkestRedFlame.png',
+  //shadowUrl: 'leaf-shadow.png',
+
+  //iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  //iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  //shadowAnchor: [4, 62],  // the same for the shadow
+  //popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 //});
 
-
-  
+//var orangeFlame = new LeafIcon({iconUrl: 'orangeFlame.png'}),
+  //  lightOrangeFlame = new LeafIcon({iconUrl: 'lightOrangeFlame.png'}),
+    //goldenOrangeFlame = new LeafIcon({iconUrl: 'goldenOrangeFlame.png'}),
+    //goldenFlame = new LeafIcon({iconUrl: 'goldenFlame.png'}),
+    //yellowFlame = new LeafIcon({iconUrl: 'yellowFlame.png'});
