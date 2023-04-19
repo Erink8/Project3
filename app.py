@@ -22,6 +22,8 @@ Base.prepare(engine,reflect=True)
 Ca_wildfire = Base.classes.ca_wildfire
 Ca_drought = Base.classes.ca_drought
 
+print(Ca_wildfire)
+print(Ca_drought)
 # Initialize app
 app = Flask(__name__)
 
@@ -55,7 +57,7 @@ def test():
 #    app.run(debug=True)
 
 # CA drought data
-@app.route('/api')
+@app.route('/api-drought')
 @cross_origin() 
 def get_drought_data():
     session = Session(engine)
@@ -64,7 +66,7 @@ def get_drought_data():
     results = session.query(Ca_drought).all()
     session.close()
 
-    cols = ['drought_id','non_avg_pct', 'd0_avg_pct', 'd1_avg_pct', 'd2_avg_pct', 'd3_avg_pct', 'd4_avg_pct', 'total_acres_burned', 'month_year']
+    cols = ['drought_id','none_avg_pct', 'D0_avg_pct', 'D1_avg_pct', 'D2_avg_pct', 'D3_avg_pct', 'D4_avg_pct', 'total_acres_burned', 'month_year']
     data = session.query(Ca_drought).all()
     result = [{col: getattr(d, col) for col in cols} for d in data]
     jsonData= {"type": "FeatureCollection", "Features": result}
