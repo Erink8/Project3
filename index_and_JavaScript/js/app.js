@@ -1,19 +1,26 @@
 
 // Store a URL/ call api
-const api = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json'
+var URL = "https://california-wildfires-api-r6o6.onrender.com/api"
 
 // Fetch the JSON data and console log it
-d3.json(api).then(
+d3.json(URL).then(
   function(data) {
     console.log(data);
   });
-
 
 // Create funtion that builds bubble chart
 function buildBubbleChart(sample)
 {
      // Use the D3 library to get all the data
-     d3.json(api).then((data) => {
+     d3.json(URL).then((data) => {
+
+          // Get the acres burned and days duration
+        let acresBurned = data.result;
+        console.log(acresBurned);
+        let daysDuration = resultData.days_duration;
+        console.log(acresBurned);
+
+
 
         let sampleData = data.samples;
 
