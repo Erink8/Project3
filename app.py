@@ -20,7 +20,7 @@ Base.prepare(engine,reflect=True)
 
 # Save references to each table
 Ca_wildfire = Base.classes.ca_wildfire
-#Ca_drought = Base.classes.ca_drought
+Ca_drought = Base.classes.ca_drought
 
 # Initialize app
 app = Flask(__name__)
@@ -38,7 +38,7 @@ def greeting():
 @app.route('/api')
 @cross_origin() 
 def test():
-    # Create our session (link from pythong to sql database)
+    # Create our session (link from python to sql database)
     session = Session(engine)
 
     # Return JSON list of stations from the dataset
@@ -50,5 +50,25 @@ def test():
     result = [{col: getattr(d, col) for col in cols} for d in data]
     return jsonify(result=result)
 
+#if __name__ == "__main__":
+#    app.run(debug=True)
+
+# CA drought data
+@app.route('/api')
+@cross_origin() 
+def get_drought_data():
+    session = Session(engine)
+
+    # Return JSON list of stations from the dataset
+    results = session.query(Ca_drought).all()
+    session.close()
+
+    cols = ['drought_id','non_avg_pct', 'd0_avg_pct', 'd1_avg_pct', 'd2_avg_pct', 'd3_avg_pct', 'd4_avg_pct', 'total_acres_burned', 'month_year']
+    data = session.query(Ca_drought).all()
+    result = [{col: getattr(d, col) for col in cols} for d in data]
+    return jsonify(result=result)
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+## needs geoJson format in order to map data
