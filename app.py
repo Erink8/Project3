@@ -10,7 +10,7 @@ from geo_keys import database_key
 
 
 # Create engine to postgress sql california wildfire data file
-engine = create_engine(database_key)
+engine = create_engine(os.getenv('DATABASE_URI'))
 
 # Reflect an existing database into a new model
 Base = automap_base()
