@@ -1,6 +1,11 @@
-d3.json("https://california-fire-data.onrender.com").then(function(data){
-  console.log(data);
-});
+// Store a URL/ call api
+var URL = "https://california-wildfires-api-r6o6.onrender.com/api"
+
+// Fetch the JSON data and console log it
+d3.json(URL).then(
+  function(data) {
+    console.log(data);
+  });
 
 
 
