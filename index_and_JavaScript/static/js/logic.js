@@ -43,7 +43,7 @@ function createMarkers(data) {
 
     // For each incident, create a marker, and bind a popup with the incident's name.
     var FireMarkers = L.marker([incident.latitude, incident.longitude])
-      .bindPopup("<h3>" + incident.incident_name + "<h3><h3>Capacity: " + incident.acres_burned + "</h3>");
+      .bindPopup("<h3>" + incident.incident_name + "<h3><h3>acres: " + incident.acres_burned + "</h3>");
 
     // Add the marker to the bikeMarkers array.
     FireMarker.push(FireMarkers);
