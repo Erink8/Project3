@@ -73,7 +73,7 @@ Using the links above the team was able to call the API to get the geoJson code 
 
 
 ### Interactive Dashboard
-
+GitHub Pages: https://erink8.github.io/Project3/
 
 (insert text and images here)
 
