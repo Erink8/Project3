@@ -55,6 +55,8 @@ Wildfire clean up
 ### Creating the PostgresSQL Database
 Once files were cleaned, we created a postgresSQL schema for both tables using their IDs as the primary key. Schema image and SQL code were created using https://www.quickdatabasediagrams.com/
 
+![schema](https://github.com/Erink8/Project3/blob/sheila_branch/PostSQL/schema%20Final%20.png)
+
 The ca_drought and ca_wildfire csv files were uploaded to PostregeSQL and the databased was linked to a remote server. 
 Using render.com we created a remote server to host our PostgreSQL database and provide us with a web URL for our API calls. 
 
