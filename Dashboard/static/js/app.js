@@ -9,6 +9,7 @@ d3.json(url).then(function(data) {
     // Assign data to variables
     let drought = data.Features;
     let acres = drought.map(d => d.total_acres_burned);
+    let none = drought.map(d => d.none_avg_pct);
     let d0 = drought.map(d => d.D0_avg_pct);
     let d1 = drought.map(d => d.D1_avg_pct);
     let d2 = drought.map(d => d.D2_avg_pct);
@@ -16,6 +17,16 @@ d3.json(url).then(function(data) {
     let d4 = drought.map(d => d.D4_avg_pct);
     let monthYear = drought.map(d => d.month_year);
 
+    // Create trace for no drought
+    let traceNone = {
+      x: monthYear,
+      y: none,
+      name: "No Drought",
+      type: "line",
+      marker: {
+          color: "blue"
+      }
+  };
     // Create traces1-4 for levels D1-D4 of drought
     let trace1 = {
         x: monthYear,
@@ -55,9 +66,11 @@ d3.json(url).then(function(data) {
     };
 
     // Assign all 4 traces to single line graph
-    let lineData = [trace1, trace2, trace3, trace4];
+    let lineData = [traceNone, trace1, trace2, trace3, trace4];
     let lineLayout = {
-        title: `Drought Levels in California`
+        title: `Drought Levels in California`,
+        xaxis: { title: 'Year' },
+        yaxis: { title: 'Percentage of California' }
     };
 
     // Create Plotly line graph
@@ -75,7 +88,9 @@ d3.json(url).then(function(data) {
     
     let barData = [traceBar];
     let barLayout = {
-        title: `Total Acres Burned per Month`
+        title: `Total Acres Burned per Month`,
+        xaxis: { title: 'Year' },
+        yaxis: { title: 'Total Acres Burned' }
     };
 
     // Create Plotly bar graph
