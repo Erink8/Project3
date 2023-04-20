@@ -65,7 +65,7 @@ Using render.com we created a remote server to host our PostgreSQL database and 
 https://california-fire-data-if1l.onrender.com
 
 API geoJson data can be retrieve from the following links:
-California fire data:  https://california-fire-data-if1l.onrender.com
+California fire data:  https://california-fire-data-if1l.onrender.com/api
 California drought data: https://california-fire-data-if1l.onrender.com/api-drought
 
 Using the links above the team was able to call the API to get the geoJson code to begin creating interactive charts and maps to illustrate how drought and wildfires have affected California over the years. 
