@@ -1,6 +1,5 @@
-
 // Store a URL/ call api
-var URL = "https://california-wildfires-api-r6o6.onrender.com/api"
+var URL = "https://california-fire-data-if1l.onrender.com/api"
 
 // Fetch the JSON data and console log it
 d3.json(URL).then(
@@ -8,56 +7,67 @@ d3.json(URL).then(
     console.log(data);
   });
 
-// Create funtion that builds bubble chart
-function buildBubbleChart(sample)
-{
-     // Use the D3 library to get all the data
-     d3.json(URL).then((data) => {
+  // Use the D3 library to get all the data
+  d3.json(URL).then((data) => {
 
-          // Get the acres burned and days duration
-        let acresBurned = data.result;
-        console.log(acresBurned);
-        let daysDuration = resultData.days_duration;
-        console.log(acresBurned);
+    let allData = data.Features;
 
+    // count the number of wildfires per county in a dataset
+    let countyCount = allData.reduce((counts, d) => {
+      if (counts[d.county]) {
+        counts[d.county]++;
+      } else {
+        counts[d.county] = 1;
+      }
+      return counts;
+    }, {});
+    console.log(countyCount)
 
+    // Sort counties by count in descending order
+    let sortedCounties = Object.entries(countyCount)
+    .sort((a, b) => b[1] - a[1])
+    .map(pair => ({ county: pair[0], count: pair[1] }));
 
-        let sampleData = data.samples;
+    console.log(sortedCounties);   
+    
+    // Slice the first 10 objects for plotting
+    slicedData = sortedCounties.slice(0, 15);
 
-        // Filter the data 
-        let filteredData = sampleData.filter(result => result.id == sample);
+    // Extract county names and counts as separate arrays for plotly
+    let countyNames = slicedData.map(d => d.county);
+    let countyCounts = slicedData.map(d => d.count);
 
+    // Create trace for plotly
+    let trace = [{
+       x: countyNames,
+       y: countyCounts,
+       type: 'bar',
+       marker: {      
+          color: ['#940408',
+            '#9a110a',
+            '#9f1e0c',
+            '#a52b0e',
+            '#ab3811',
+            '#b14513',
+            '#b65215',
+            '#bc5f17',
+            '#c26c19',
+            '#c7791b',
+            '#cd861d',
+            '#d39320',
+            '#d9a022',
+            '#dead24',
+            '#e4ba26']}
+      }];
 
-        // Get the first value from the data
-        let resultData = filteredData[0];
-
-        // Get the otu ids, lables, and sample values
-        let otu_ids = resultData.otu_ids;
-        let otu_labels = resultData.otu_labels;
-        let sample_values = resultData.sample_values;
-
-        // Set up trace a bubble chart
-        let trace2 = {
-            y: sample_values,
-            x: otu_ids,
-            text: otu_labels,
-            mode: "markers",
-            marker: {
-                size: sample_values,
-                color: otu_ids,
-                colorscale: "Earth"
-            }
-        };
-        let bubbleData = [trace2];
-
-        // Set up a layout for the Bubble Chart
-        let layout = {
-            title: "Bacteria Per Sample",
-            hovermode: "closest",
-            xaxis: {title: "OTU ID"}
-        };
-
-        // Plot the bar chart using Plotly
-        Plotly.newPlot("bubble", bubbleData, layout)
-    });
+    // Create layout object for plotly
+    let layout = {
+        title: 'Top 15 Wildfires in California by County',
+        xaxis: { title: 'County' },
+        yaxis: { title: 'Number of Wildfires' }
 };
+
+    // Plot the bar chart using plotly
+    Plotly.newPlot('bar-chart', trace, layout);
+  });
+

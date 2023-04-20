@@ -18,7 +18,6 @@ Base.prepare(engine,reflect=True)
 
 # Save references to each table
 Ca_wildfire = Base.classes.ca_wildfire
-#Ca_drought = Base.classes.ca_drought
 
 # Initialize app
 app = Flask(__name__)
