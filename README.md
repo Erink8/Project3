@@ -73,7 +73,7 @@ Using the links above the team was able to call the API to get the geoJson code 
 
 
 ### Interactive Dashboard
-GitHub Pages: https://erink8.github.io/Project3/
+GitHub Pages: https://leah-apking.github.io/project3/
 
 We formatted our dashboard to hold our 4 visualizations - Drought Levels, Acres Burned per Month by Year, Top Count of Wildfires by County (Top 15), and and interactive map featuring a satellite layer displaying acres burned.
 
