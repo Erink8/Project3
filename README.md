@@ -78,7 +78,8 @@ GitHub Pages: https://leah-apking.github.io/project3/
 We formatted our dashboard to hold our 4 visualizations - Drought Levels, Acres Burned per Month by Year, Top Count of Wildfires by County (Top 15), and and interactive map featuring a satellite layer displaying acres burned.
 
 Drought Levels
-<img width="1171" alt="Screenshot 2023-04-20 at 2 04 38 PM" src="https://user-images.githubusercontent.com/119360371/233463313-e3aa6ebe-62c8-43c3-9d02-601b38369d66.png">
+<img width="1278" alt="Screenshot 2023-04-20 at 6 09 55 PM" src="https://user-images.githubusercontent.com/119360371/233505414-543ad0b1-fd2a-4729-b757-e6d78029eae2.png">
+
 
 Acres Burned per Month by Year
 <img width="1177" alt="Screenshot 2023-04-20 at 2 04 50 PM" src="https://user-images.githubusercontent.com/119360371/233463429-344fe051-f9c7-4eb3-ab51-3bf1a9f3fe14.png">
