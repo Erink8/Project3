@@ -75,12 +75,21 @@ Using the links above the team was able to call the API to get the geoJson code 
 ### Interactive Dashboard
 GitHub Pages: https://erink8.github.io/Project3/
 
-(insert text and images here)
+We formatted our dashboard to hold our 4 visualizations - Drought Levels, Acres Burned per Month by Year, Top Count of Wildfires by County (Top 15), and and interactive map featuring a satellite layer displaying acres burned.
 
+Drought Levels
+<img width="1171" alt="Screenshot 2023-04-20 at 2 04 38 PM" src="https://user-images.githubusercontent.com/119360371/233463313-e3aa6ebe-62c8-43c3-9d02-601b38369d66.png">
 
+Acres Burned per Month by Year
+<img width="1177" alt="Screenshot 2023-04-20 at 2 04 50 PM" src="https://user-images.githubusercontent.com/119360371/233463429-344fe051-f9c7-4eb3-ab51-3bf1a9f3fe14.png">
 
+Top Count of Wildfires by County (Top 15)
+<img width="1268" alt="Screenshot 2023-04-20 at 2 05 04 PM" src="https://user-images.githubusercontent.com/119360371/233463530-9a619947-1b4d-4f79-8789-2db1581f4507.png">
 
+Interactive Map - acres burned
+<img width="601" alt="Screenshot 2023-04-20 at 11 42 03 AM" src="https://user-images.githubusercontent.com/119360371/233463620-3e6c8766-e1b9-4546-a972-ac8c402d7836.png">
 
+<img width="616" alt="Screenshot 2023-04-20 at 11 42 13 AM" src="https://user-images.githubusercontent.com/119360371/233463656-328b0b9f-9b73-4c3b-b44c-0e121136f30e.png">
 
 
 ---------------------------------------------------------------------------
