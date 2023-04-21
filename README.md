@@ -97,6 +97,8 @@ Interactive Map - acres burned
 ---------------------------------------------------------------------------
 Resources:
 
+fire.ca.gov/incidents
+
 drought.gov
 
 https://www.quickdatabasediagrams.com/
