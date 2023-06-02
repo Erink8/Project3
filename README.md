@@ -93,6 +93,11 @@ Interactive Map - acres burned
 
 <img width="300" alt="Screenshot 2023-04-20 at 11 42 13 AM" src="https://user-images.githubusercontent.com/119360371/233463656-328b0b9f-9b73-4c3b-b44c-0e121136f30e.png">
 
+### Presentation
+
+link to our classroom presentation:
+
+https://docs.google.com/document/d/1oCdUqb5WQJTnT07PY5o2Bjy2Jt6xa58dj6uTfUguqrI/edit?usp=sharing
 
 ---------------------------------------------------------------------------
 Resources:
